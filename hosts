@@ -1,0 +1,20 @@
+## set up ssh user name and path to python3 ##
+[all:vars]
+ansible_user=ms
+ansible_become=yes
+ansible_become_method=sudo
+ansible_python_interpreter='/usr/bin/env python3'
+
+## servers ##
+[pihole]
+192.168.50.66
+
+[main_server]
+192.168.50.103
+
+[docker]
+192.168.50.103
+192.168.50.168
+
+[mgmt]
+192.168.50.153
