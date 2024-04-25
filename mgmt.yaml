@@ -1,0 +1,15 @@
+---
+- hosts: mgmt
+  roles:
+    - role: geerlingguy.ansible
+  tasks:
+    - name: Get user's home directory
+      shell: >
+        getent passwd {{ ansible_user }} | cut -d: -f6
+      changed_when: false
+      register: user_home
+    - name: Ensure ansible scripts repository is cloned locally.
+      git:
+        repo: https://github.com/onexey/ansible-playbooks.git
+        dest: "{{ user_home.stdout }}/ansible-playbooks"
+      become: false
