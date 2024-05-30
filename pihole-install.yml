@@ -1,0 +1,23 @@
+---
+
+- hosts: pihole
+  become: true
+  tasks:
+  - name: Ensure sqlite3 is installed
+    package:
+      name: sqlite3
+      state: present
+
+- hosts: pihole
+  become: true
+  vars:
+    dnsrecords: |
+      192.168.50.103 mssrv
+      192.168.50.1 router.asus.com
+  roles:
+     - r_pufky.pihole
+  tasks:
+  - name: Add Local DNS Records [A/AAAA]
+    ansible.builtin.copy:
+      content: "{{ dnsrecords }}"
+      dest: '/etc/pihole/custom.list'

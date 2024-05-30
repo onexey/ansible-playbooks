@@ -1,0 +1,45 @@
+pihole_webpassword: 'changeme'
+
+pihole_update_enable: true
+pihole_webtheme: 'default-auto'
+pihole_dns_fqdn_required: true
+pihole_dns_bogus_priv: true
+
+pihole_pihole_dns_1: '1.1.1.1'
+pihole_pihole_dns_2: '1.0.0.1'
+pihole_pihole_dns_3: '8.8.8.8'
+pihole_pihole_dns_4: '8.8.4.4'
+
+pihole_ad_sources:
+  - id: 1
+    address: 'https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts'
+    enabled: true
+    comment: 'Migrated from /etc/pihole/adlists.list'
+  - id: 2
+    address: 'https://blocklistproject.github.io/Lists/abuse.txt'
+    enabled: true
+    comment: 'Abuse'
+  - id: 3
+    address: 'https://blocklistproject.github.io/Lists/ads.txt'
+    enabled: true
+    comment: 'Ads'
+  - id: 4
+    address: 'https://blocklistproject.github.io/Lists/crypto.txt'
+    enabled: true
+    comment: 'Crypto'
+  - id: 5
+    address: 'https://blocklistproject.github.io/Lists/fraud.txt'
+    enabled: true
+    comment: 'Fraud'
+  - id: 6
+    address: 'https://blocklistproject.github.io/Lists/malware.txt'
+    enabled: true
+    comment: 'Malware'
+  - id: 7
+    address: 'https://blocklistproject.github.io/Lists/ransomware.txt'
+    enabled: true
+    comment: 'Ransomware'
+  - id: 8
+    address: 'https://blocklistproject.github.io/Lists/scam.txt'
+    enabled: true
+    comment: 'Scam'
