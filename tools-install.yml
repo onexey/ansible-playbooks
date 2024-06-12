@@ -7,3 +7,7 @@
       package:
         name: vim
         state: present
+    - name: Ensure ncdu is installed
+      package:
+        name: ncdu
+        state: present
