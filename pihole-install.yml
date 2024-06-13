@@ -14,6 +14,10 @@
     dnsrecords: |
       192.168.50.103 mssrv
       192.168.50.1 router.asus.com
+      192.168.50.66 MS-PIHOLE
+      192.168.50.168 MS-UPT
+      192.168.50.153 MS-MGMT
+      192.168.50.20	homeassistant
   roles:
      - r_pufky.pihole
   tasks:
